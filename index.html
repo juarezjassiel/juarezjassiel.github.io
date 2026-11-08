@@ -267,6 +267,7 @@
         <button onclick="runCommand('java')" class="px-3 py-1 rounded border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">run: java</button>
         <button onclick="runCommand('bigo')" class="px-3 py-1 rounded border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">run: bigo</button>
         <button onclick="runCommand('sniff')" class="px-3 py-1 rounded border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">run: sniff</button>
+        <button onclick="runCommand('pos')" class="px-3 py-1 rounded border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">run: pos</button>
         <button onclick="runCommand('eeprom')" class="px-3 py-1 rounded border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">run: eeprom</button>
         <button onclick="runCommand('bio')" class="px-3 py-1 rounded border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">run: bio</button>
         <button onclick="runCommand('clear')" class="px-3 py-1 rounded border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-rose-400 hover:border-rose-500/40 transition">run: clear</button>
@@ -285,7 +286,7 @@
     const input = document.getElementById('cli-input');
 
     const commands = {
-      help: "Commands: bio, cpp, java, bigo, sniff, eeprom, ping, clear",
+      help: "Commands: bio, cpp, java, bigo, sniff, eeprom, ping, pos, clear",
       bio: "Jassiel Juarez: CS @ Tarleton State University.\nFocus: Low-Level Systems, C/C++ Foundations, Java OOP/DSA, Network Sockets, Hardware/EEPROM Diagnostics.",
       skills: "Java (OOP/DSA), C/C++ (Foundations), x86 Assembly, Python, Linux, Raw Sockets, Scapy, EEPROM Flashing, Git Collaboration.",
       cpp: "C/C++ SYSTEMS FOUNDATIONS:\n" +
@@ -305,7 +306,8 @@
       sniff: "LISTENING ON eth0 (Promiscuous Mode)...\n18:42:01.104 IP 192.168.1.15.54322 > 1.1.1.1.80: Flags [P.], seq 1:45\n18:42:01.121 IP 1.1.1.1.80 > 192.168.1.15.54322: Flags [.], ack 45\nCaptured raw Ethernet frame & IP header successfully.",
       eeprom: "READING 24C02 via CH341A...\n0000: 4A 61 73 73 69 65 6C 20 4A 75 61 72 65 7A 00 FF  Jassiel Juarez..\n0010: 53 79 73 74 65 6D 73 20 45 6E 67 69 6E 65 65 72  Systems Engineer\nRead verified: 0 errors, Checksum: 0x4B2E",
       ping: "PING 1.1.1.1 (1.1.1.1): 56 data bytes\n64 bytes from 1.1.1.1: icmp_seq=0 time=14.2 ms\n64 bytes from 1.1.1.1: icmp_seq=1 time=13.8 ms",
-      clear: "__CLEAR__"
+          pos: "RETAIL POS ENGINE (FastAPI + SQLite ACID):\n• Architecture: Integer-cents accounting engine (avoiding float drift), 8.25% TX sales tax logic.\n• Security: Touch/keyboard 4-digit PIN RBAC (Manager vs. Cashier).\n• Operations: ACID-compliant checkout, SKU barcode scanner, thermal receipt, Z-report CSV export.",
+    clear: "__CLEAR__"
     };
 
     function runCommand(cmdText) {
